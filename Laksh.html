@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunil Katekar | Real Estate Broker</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #F5F1EB;
+    --text: #2D2D2D;
+    --accent: #88956A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: linear-gradient(to bottom right, #F5F1EB, #E8E5DF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+}
+
+.hero p {
+    margin: 15px 0;
+    font-size: 1.1rem;
+}
+
+.btn {
+    background: var(--accent);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* SECTIONS */
+section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+}
+
+/* TIMELINE */
+.timeline {
+    border-left: 2px solid var(--accent);
+    padding-left: 20px;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+/* SKILLS */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill {
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* CONTACT */
+.contact a {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text);
+    text-decoration: none;
+}
+
+/* FORM */
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background: var(--accent);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+}
+
+/* ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE */
+@media(max-width: 600px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>Sunil Katekar</h1>
+        <p>"Helping you to find new home, give best service"</p>
+        <a href="#contact" class="btn">Let's Connect</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="fade">
+    <h2>About Me</h2>
+    <p>
+        With over 25 years of experience, Sunil Katekar is a trusted name in the real estate market.
+        Known as a "Statesman Broker", his reputation is built on trust, deep market understanding,
+        and long-term client relationships. His name itself represents reliability and excellence.
+    </p>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="fade">
+    <h2>Experience</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <p><strong>25+ Years in Real Estate</strong></p>
+            <p>Specialized in renting rooms and helping families find ideal homes.</p>
+        </div>
+        <div class="timeline-item">
+            <p><strong>Market Expertise</strong></p>
+            <p>Experienced through major market cycles including 2008 crash and 2020 pandemic.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section class="fade">
+    <h2>Skills</h2>
+    <div class="skills">
+        <div class="skill">Economic Pattern Recognition</div>
+        <div class="skill">Fiduciary Responsibility</div>
+        <div class="skill">Risk Anticipation</div>
+        <div class="skill">Client Trust Building</div>
+        <div class="skill">Property Evaluation</div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="fade">
+    <h2>Education</h2>
+    <p>Practical industry experience and real-world market knowledge over 25 years.</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade contact">
+    <h2>Contact</h2>
+
+    <a href="tel:+918108399088">📞 +91 81083 99088</a>
+    <a href="mailto:lakshoganiya10@gmail.com">✉ lakshoganiya10@gmail.com</a>
+    <p>📍 Dombivli, Maharashtra</p>
+
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <textarea placeholder="Your Message" rows="4"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<script>
+// Fade-in animation on scroll
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    faders.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            el.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
